@@ -2,16 +2,22 @@
 
 ```bash
 git init // inicializar git
+git init --initial-branch=main // define qual vai ser a branch inicial
+git status // fazer varredura e verificar atualizações feitas
 git add nome_arquivo // adiciona arquivo
+git add -A // adiciona todos os arquivos que não estão no git
 git commit -m "comentário" // comentário para o push
-git branch -M nome_branch // cria branch
+git commit -am "comentário" // faz o commit para todos os arquivos
+git remote // verifica repositório configurado
+git remote -v // mais info do repositório configurado 
 git remote add origin link_repo // adiciona repositório remoto
+git remote rm origin // remove git remoto
 git push -u origin nome_branch // empurra para a branch nome_branch -u é um atalho para "--set-upstream", com ele, salvamos a relação entre branch local e remoto
 git push orign nome_branch // especifica a branch para empurrar
 ```
 
 
-# CONFIGURAÇÃO
+# CONFIG
 
 ```bash
 git config --global user.name "usuário" // usuário global
@@ -51,31 +57,59 @@ git log --author=autor // filtra e mostra commits feitos por autor específico
 ```
 
 
-# USO GERAL
+# BRANCH
 
 ```bash
-git status // fazer varredura e verificar atualizações feitas
-git add -A // adiciona todos os arquivos que não estão no git
-git commit -am "comentário" // faz o commit para todos os arquivos
-git branch // pra listar todos os branchs
-git reset [soft] numero serie commit // volta 1 commit e prepara para commitar/mais indicado para trabalho de equipe
-git reset [mix] numero serie commit // volta 1 commit e precisa fazer add commit
-git reset [hard] numero serie commit // apaga o commit
-git checkout [nome do branch] // alterar o branch de utilização
-git restore --staged // restaurar encenada
-git diff // verificar alterações realizadas de todos os arquivos
-git diff [nome_do_arquivo] // verificar alterações realizadas de arquivos especificos
-git diff --name-only // verificar quais arquivos foram alterados
-git checkout branch_atual --arquivo // quando desiste em cima da hora de fazer alteração e deseja fazer alteração de apenas um arquivo.
-git branch -D nome_do_branch // deletar o branch
-git remote rm // remover git remoto
+git branch // lista as branches
+git branch -m master main // renomeia a branch
+git branch -M nome_branch // força a criação da branch
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main // redireciona o apontamento para a nova branch local
+git branch -a // lista todas as branches (local e remota)
+git checkout -b nome_branch // cria branch local
+git chechout nome_branch // altera para a branch nome_branch
+git branch -D nome_branch // força o delete da branch local
+git push -d origin nome_branch // remove a branch remota nome_branch
 ```
 
 
-|Transferir para o gitHub|
+# MERGE
 
-|1| git remote add origin |link do repositorio git| // Adicionar o repositorio remoto.
-|2| git remote // verificar se há o servidor remoto adicionado.
-|3| git push -u origin master // empurrar para o github
-|4| git revert --no-edit [imei do log] // desfaz alterações, porem mantem as mesmas para verificar o que fez de errado
-|5| git push -u origin :[nome_do_branch]  // para deletar branch do github
+```bash
+git merge nome_branch // vai mergear a branch que você está com a nome_branch
+```
+
+
+# RESET E REVERT
+
+```bash
+git reset arquivo // retira o arquivo que foi adicionado ao git
+git reset // remove todos os arquivos do git no commit atual
+git reset --hard // volta para o último commit apagando os mais novos
+git reset --soft <commit> // volta 1 commit e prepara para commitar/mais indicado para trabalho de equipe
+git reset --mix <commit> // volta 1 commit e precisa fazer add commit
+git commit -amend // altera a mensagem do commit
+git revert <commit> // revertendo para outro commit
+git clean -n // verifica os arquivos que não estão no git
+git clean -f // remove os arquivos que não estão no git
+```
+
+
+# DIFF
+
+```bash
+git diff HEAD // ver diferença para o último commit
+git diff --cached // compara o que você tem com o que está adicionado ao git
+git diff commit commit // compara as diferenças entre os commit
+git diff branch branch // diferença entre as branches
+git diff arquivo // verifica alterações feitas em arquivo específico
+git diff // verifica alterações feitas em tudo
+git diff --name-only // mostra somente o nome dos arquivos alterados
+```
+
+
+# USO GERAL
+
+```bash
+git restore --staged // restaurar encenada
+git checkout branch_atual --arquivo // quando desiste em cima da hora de fazer alteração e deseja fazer alteração de apenas um arquivo.
+```
