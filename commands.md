@@ -34,11 +34,9 @@ git config --system color.ui true // ativa coloração no git
 ```
 
 
-# USO GERAL
+# LOGS
 
 ```bash
-git status // fazer varredura e verificar atualizações feitas
-git add -A // adiciona todos os arquivos que não estão no git
 git log // verifica o que foi commitado e qual branch está
 git log -1 // último log
 git log --oneline // menos detalhes
@@ -50,6 +48,14 @@ git log --graph // representação gráfica em árvore no log
 git log -- arquivo // histórico de commits de um arquivo específico
 git log --stat // número de linhas adicionadas/removidas
 git log --author=autor // filtra e mostra commits feitos por autor específico
+```
+
+
+# USO GERAL
+
+```bash
+git status // fazer varredura e verificar atualizações feitas
+git add -A // adiciona todos os arquivos que não estão no git
 git commit -am "comentário" // faz o commit para todos os arquivos
 git branch // pra listar todos os branchs
 git reset [soft] numero serie commit // volta 1 commit e prepara para commitar/mais indicado para trabalho de equipe
