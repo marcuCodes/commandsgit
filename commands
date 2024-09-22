@@ -1,0 +1,49 @@
+### PRIMEIROS COMANDOS ###
+
+git init // inicializar git
+git add nome_arquivo // adiciona arquivo
+git commit -m "comentário" // comentário para o push
+git branch -M nome_branch // cria branch
+git remote add origin link_repo // adiciona repositório remoto
+git push -u origin nome_branch // empurra para a branch nome_branch -u é um atalho para "--set-upstream", com ele, salvamos a relação entre branch local e remoto
+git push orign nome_branch // especifica a branch para empurrar
+
+
+|Configurar o Git|
+
+|1| git -- version // verificar a versão do git
+|2| git config -- global user.name "nickname" // configurações de info.
+|3| git config -- global user.email "e-mail" // configurações de info.
+|4| git config user.name // verificar user sendo utilizado.
+|5| git config user.email // verificar email sendo utilizado.
+|6| git config --list // verificar dados gerais de info.
+_____________________________________________________________________________
+
+|Manusear o Git|
+
+|1| git init // inicializar o git na pasta
+|2| git status // fazer varredura e verificar atualizações feitas.
+|3| git add nome_arquivo // adicionar arquivo no git.
+|4| git add -A // adiciona todos os arquivos que não estão no git
+|5| git log // veriicar o que foi commitado e qual branch está.
+|6| git commit -m "comentario" // fazendo commit.
+|7| git branch // pra listar todos os branchs.
+|8| git reset [soft] numero serie commit // volta 1 commit e prepara para commitar/mais indicado para trabalho de equipe
+|9| git reset [mix] numero serie commit // volta 1 commit e precisa fazer add commit
+|10| git reset [hard] numero serie commit // apaga o commit.
+|11| git checkout [nome do branch] // alterar o branch de utilização
+[12] git restore --staged // restaurar encenada
+|13| git diff // verificar alterações realizadas de todos os arquivos
+[14] git diff [nome_do_arquivo] // verificar alterações realizadas de arquivos especificos
+|15| git diff --name-only // verificar quais arquivos foram alterados
+[16] git checkout branch_atual --arquivo // quando desiste em cima da hora de fazer alteração e deseja fazer alteração de apenas um arquivo.
+|17| git branch -D nome_do_branch // deletar o branch
+|18| git remote rm // remover git remoto
+
+|Transferir para o gitHub|
+
+|1| git remote add origin |link do repositorio git| // Adicionar o repositorio remoto.
+|2| git remote // verificar se há o servidor remoto adicionado.
+|3| git push -u origin master // empurrar para o github
+|4| git revert --no-edit [imei do log] // desfaz alterações, porem mantem as mesmas para verificar o que fez de errado
+|5| git push -u origin :[nome_do_branch]  // para deletar branch do github
