@@ -6,6 +6,7 @@ git init --initial-branch=main // define qual vai ser a branch inicial
 git status // fazer varredura e verificar atualizações feitas
 git add nome_arquivo // adiciona arquivo
 git add -A // adiciona todos os arquivos que não estão no git
+git add . // adiciona todos os arquivos que não estão no git
 git commit -m "comentário" // comentário para o push
 git commit -am "comentário" // faz o commit para todos os arquivos
 git remote // verifica repositório configurado
@@ -112,4 +113,6 @@ git diff --name-only // mostra somente o nome dos arquivos alterados
 ```bash
 git restore --staged // restaurar encenada
 git checkout branch_atual --arquivo // quando desiste em cima da hora de fazer alteração e deseja fazer alteração de apenas um arquivo.
+git rm --cached // remove os arquivos commitados que não foram enviados para o repo remoto
+git rm nome_arquivo // remove nome_arquivo do git
 ```
