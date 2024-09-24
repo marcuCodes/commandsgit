@@ -115,4 +115,5 @@ git restore --staged // restaurar encenada
 git checkout branch_atual --arquivo // quando desiste em cima da hora de fazer alteração e deseja fazer alteração de apenas um arquivo.
 git rm --cached // remove os arquivos commitados que não foram enviados para o repo remoto
 git rm nome_arquivo // remove nome_arquivo do git
+git merge production --allow-unrelated-histories // fazer a mesclagem de duas branches que não têm um histórico comum
 ```
