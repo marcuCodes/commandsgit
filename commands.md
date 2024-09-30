@@ -117,3 +117,9 @@ git rm --cached // remove os arquivos commitados que não foram enviados para o 
 git rm nome_arquivo // remove nome_arquivo do git
 git merge production --allow-unrelated-histories // fazer a mesclagem de duas branches que não têm um histórico comum
 ```
+
+
+# .GITIGNORE
+
+```bash>
+Para que o git ignore algum arquivo ou pasta que já foi rastreado pelo git, após adicionar o arquivo ou pasta no .gitignore é necessário executar o comando: **git rm --cached <arquivo ou pasta>** e fazer o commit.
