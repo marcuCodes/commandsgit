@@ -122,4 +122,4 @@ git merge production --allow-unrelated-histories // fazer a mesclagem de duas br
 # .GITIGNORE
 
 ```bash>
-Para que o git ignore algum arquivo ou pasta que já foi rastreado pelo git, após adicionar o arquivo ou pasta no .gitignore é necessário executar o comando: **git rm --cached <arquivo ou pasta>** e fazer o commit.
+Para que o git ignore algum arquivo ou pasta que já foi rastreado pelo git, após adicionar o arquivo ou pasta no .gitignore é necessário executar o comando: *git rm --cached <arquivo ou pasta>* e fazer o commit.
